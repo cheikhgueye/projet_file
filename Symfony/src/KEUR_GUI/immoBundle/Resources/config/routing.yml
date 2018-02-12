@@ -1,3 +1,0 @@
-keur.gu_iimmo_homepage:
-    path:     /
-    defaults: { _controller: KEUR_GUIimmoBundle:Default:index }
