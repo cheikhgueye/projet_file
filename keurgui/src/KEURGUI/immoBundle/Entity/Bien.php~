@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Bien
+ * Bien.
  *
  * @ORM\Table(name="bien")
  * @ORM\Entity(repositoryClass=" KEURGUI\immoBundle\Repository\BienRepository")
@@ -45,20 +45,12 @@ class Bien
     /**
      * @var int
      *
-     * @ORM\Column(name="prixPropritaire", type="integer")
-     */
-    private $prixPropritaire;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="prixLocation", type="integer")
      */
     private $prixLocation;
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -68,7 +60,7 @@ class Bien
     }
 
     /**
-     * Set nomBien
+     * Set nomBien.
      *
      * @param string $nomBien
      *
@@ -82,7 +74,7 @@ class Bien
     }
 
     /**
-     * Get nomBien
+     * Get nomBien.
      *
      * @return string
      */
@@ -92,9 +84,9 @@ class Bien
     }
 
     /**
-     * Set etat
+     * Set etat.
      *
-     * @param boolean $etat
+     * @param bool $etat
      *
      * @return Bien
      */
@@ -106,7 +98,7 @@ class Bien
     }
 
     /**
-     * Get etat
+     * Get etat.
      *
      * @return bool
      */
@@ -116,7 +108,7 @@ class Bien
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -130,7 +122,7 @@ class Bien
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -140,33 +132,9 @@ class Bien
     }
 
     /**
-     * Set prixPropritaire
+     * Set prixLocation.
      *
-     * @param integer $prixPropritaire
-     *
-     * @return Bien
-     */
-    public function setPrixPropritaire($prixPropritaire)
-    {
-        $this->prixPropritaire = $prixPropritaire;
-
-        return $this;
-    }
-
-    /**
-     * Get prixPropritaire
-     *
-     * @return int
-     */
-    public function getPrixPropritaire()
-    {
-        return $this->prixPropritaire;
-    }
-
-    /**
-     * Set prixLocation
-     *
-     * @param integer $prixLocation
+     * @param int $prixLocation
      *
      * @return Bien
      */
@@ -178,7 +146,7 @@ class Bien
     }
 
     /**
-     * Get prixLocation
+     * Get prixLocation.
      *
      * @return int
      */
@@ -187,4 +155,3 @@ class Bien
         return $this->prixLocation;
     }
 }
-

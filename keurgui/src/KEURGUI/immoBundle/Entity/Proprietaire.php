@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Proprietaire
+ * Proprietaire.
  *
  * @ORM\Table(name="proprietaire")
  * @ORM\Entity(repositoryClass="KEURGUI\immoBundle\Repository\ProprietaireRepository")
@@ -62,10 +62,15 @@ class Proprietaire
      * @ORM\Column(name="comptebancaire", type="string", length=50, nullable=true)
      */
     private $comptebancaire;
-
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="prixPropritaire", type="integer")
+     */
+    private $prixPropritaire;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -75,7 +80,7 @@ class Proprietaire
     }
 
     /**
-     * Set numpiece
+     * Set numpiece.
      *
      * @param string $numpiece
      *
@@ -89,7 +94,7 @@ class Proprietaire
     }
 
     /**
-     * Get numpiece
+     * Get numpiece.
      *
      * @return string
      */
@@ -99,7 +104,7 @@ class Proprietaire
     }
 
     /**
-     * Set nomcomplet
+     * Set nomcomplet.
      *
      * @param string $nomcomplet
      *
@@ -113,7 +118,7 @@ class Proprietaire
     }
 
     /**
-     * Get nomcomplet
+     * Get nomcomplet.
      *
      * @return string
      */
@@ -123,7 +128,7 @@ class Proprietaire
     }
 
     /**
-     * Set adresse
+     * Set adresse.
      *
      * @param string $adresse
      *
@@ -137,7 +142,7 @@ class Proprietaire
     }
 
     /**
-     * Get adresse
+     * Get adresse.
      *
      * @return string
      */
@@ -147,7 +152,7 @@ class Proprietaire
     }
 
     /**
-     * Set tel
+     * Set tel.
      *
      * @param string $tel
      *
@@ -161,7 +166,7 @@ class Proprietaire
     }
 
     /**
-     * Get tel
+     * Get tel.
      *
      * @return string
      */
@@ -171,7 +176,7 @@ class Proprietaire
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -185,7 +190,7 @@ class Proprietaire
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -195,7 +200,7 @@ class Proprietaire
     }
 
     /**
-     * Set comptebancaire
+     * Set comptebancaire.
      *
      * @param string $comptebancaire
      *
@@ -209,12 +214,36 @@ class Proprietaire
     }
 
     /**
-     * Get comptebancaire
+     * Get comptebancaire.
      *
      * @return string
      */
     public function getComptebancaire()
     {
         return $this->comptebancaire;
+    }
+
+    /**
+     * Get prixPropritaire.
+     *
+     * @return int
+     */
+    public function getPrixPropritaire()
+    {
+        return $this->prixPropritaire;
+    }
+
+    /**
+     * Set prixPropritaire.
+     *
+     * @param int $prixPropritaire
+     *
+     * @return Bien
+     */
+    public function setPrixPropritaire($prixPropritaire)
+    {
+        $this->prixPropritaire = $prixPropritaire;
+
+        return $this;
     }
 }

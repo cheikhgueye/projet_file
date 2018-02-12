@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * image
+ * image.
  *
  * @ORM\Table(name="image")
  * @ORM\Entity(repositoryClass="KEURGUI\immoBundle\Repository\imageRepository")
@@ -24,13 +24,17 @@ class image
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=50)
+     * @ORM\Column(name="image", type="string", length=50 ,nullable=true)
      */
     private $image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="KEURGUI\immoBundle\Entity\Bien")
+     */
+    private $bien;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -40,7 +44,7 @@ class image
     }
 
     /**
-     * Set image
+     * Set image.
      *
      * @param string $image
      *
@@ -54,7 +58,7 @@ class image
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -62,5 +66,28 @@ class image
     {
         return $this->image;
     }
-}
 
+    /**
+     * Set bien.
+     *
+     * @param \KEURGUI\immoBundle\Entity\Bien $bien
+     *
+     * @return image
+     */
+    public function setBien(\KEURGUI\immoBundle\Entity\Bien $bien = null)
+    {
+        $this->bien = $bien;
+
+        return $this;
+    }
+
+    /**
+     * Get bien.
+     *
+     * @return \KEURGUI\immoBundle\Entity\Bien
+     */
+    public function getBien()
+    {
+        return $this->bien;
+    }
+}

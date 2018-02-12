@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Paiement
+ * Paiement.
  *
  * @ORM\Table(name="paiement")
  * @ORM\Entity(repositoryClass="KEURGUI\immoBundle\Repository\PaiementRepository")
@@ -34,10 +34,13 @@ class Paiement
      * @ORM\Column(name="montant", type="string", length=50)
      */
     private $montant;
-
+    /**
+     * @ORM\OneToOne(targetEntity="KEURGUI\immoBundle\Entity\contrat")
+     */
+    private $contrat;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -47,7 +50,7 @@ class Paiement
     }
 
     /**
-     * Set datePaiement
+     * Set datePaiement.
      *
      * @param \DateTime $datePaiement
      *
@@ -61,7 +64,7 @@ class Paiement
     }
 
     /**
-     * Get datePaiement
+     * Get datePaiement.
      *
      * @return \DateTime
      */
@@ -71,7 +74,7 @@ class Paiement
     }
 
     /**
-     * Set montant
+     * Set montant.
      *
      * @param string $montant
      *
@@ -85,12 +88,36 @@ class Paiement
     }
 
     /**
-     * Get montant
+     * Get montant.
      *
      * @return string
      */
     public function getMontant()
     {
         return $this->montant;
+    }
+
+    /**
+     * Set contrat
+     *
+     * @param \KEURGUI\immoBundle\Entity\contrat $contrat
+     *
+     * @return Paiement
+     */
+    public function setContrat(\KEURGUI\immoBundle\Entity\contrat $contrat = null)
+    {
+        $this->contrat = $contrat;
+
+        return $this;
+    }
+
+    /**
+     * Get contrat
+     *
+     * @return \KEURGUI\immoBundle\Entity\contrat
+     */
+    public function getContrat()
+    {
+        return $this->contrat;
     }
 }

@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Reservation
+ * Reservation.
  *
  * @ORM\Table(name="reservation")
  * @ORM\Entity(repositoryClass="KEURGUI\immoBundle\Repository\ReservationRepository")
@@ -34,10 +34,17 @@ class Reservation
      * @ORM\Column(name="etat", type="boolean")
      */
     private $etat;
-
+    /**
+     * @ORM\ManyToOne(targetEntity="KEURGUI\immoBundle\Entity\Bien")
+     */
+    private $bien;
+    /**
+     * @ORM\ManyToOne(targetEntity="KEURGUI\immoBundle\Entity\client")
+     */
+    private $client;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -47,7 +54,7 @@ class Reservation
     }
 
     /**
-     * Set datereservation
+     * Set datereservation.
      *
      * @param \DateTime $datereservation
      *
@@ -61,7 +68,7 @@ class Reservation
     }
 
     /**
-     * Get datereservation
+     * Get datereservation.
      *
      * @return \DateTime
      */
@@ -71,9 +78,9 @@ class Reservation
     }
 
     /**
-     * Set etat
+     * Set etat.
      *
-     * @param boolean $etat
+     * @param bool $etat
      *
      * @return Reservation
      */
@@ -85,12 +92,60 @@ class Reservation
     }
 
     /**
-     * Get etat
+     * Get etat.
      *
      * @return bool
      */
     public function getEtat()
     {
         return $this->etat;
+    }
+
+    /**
+     * Set bien.
+     *
+     * @param \KEURGUI\immoBundle\Entity\Bien $bien
+     *
+     * @return Reservation
+     */
+    public function setBien(\KEURGUI\immoBundle\Entity\Bien $bien = null)
+    {
+        $this->bien = $bien;
+
+        return $this;
+    }
+
+    /**
+     * Get bien.
+     *
+     * @return \KEURGUI\immoBundle\Entity\Bien
+     */
+    public function getBien()
+    {
+        return $this->bien;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \KEURGUI\immoBundle\Entity\client $client
+     *
+     * @return Reservation
+     */
+    public function setClient(\KEURGUI\immoBundle\Entity\client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \KEURGUI\immoBundle\Entity\client
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

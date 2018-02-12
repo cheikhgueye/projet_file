@@ -5,7 +5,7 @@ namespace KEURGUI\immoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * contrat
+ * contrat.
  *
  * @ORM\Table(name="contrat")
  * @ORM\Entity(repositoryClass="KEURGUI\immoBundle\Repository\contratRepository")
@@ -41,10 +41,17 @@ class contrat
      * @ORM\Column(name="duree", type="datetime")
      */
     private $duree;
-
+    /**
+     * @ORM\OneToOne(targetEntity="KEURGUI\immoBundle\Entity\Bien")
+     */
+    private $bien;
+    /**
+     * @ORM\OneToOne(targetEntity="KEURGUI\immoBundle\Entity\Bien")
+     */
+    private $client;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -54,7 +61,7 @@ class contrat
     }
 
     /**
-     * Set datecontrat
+     * Set datecontrat.
      *
      * @param \DateTime $datecontrat
      *
@@ -68,7 +75,7 @@ class contrat
     }
 
     /**
-     * Get datecontrat
+     * Get datecontrat.
      *
      * @return \DateTime
      */
@@ -78,9 +85,9 @@ class contrat
     }
 
     /**
-     * Set caution
+     * Set caution.
      *
-     * @param integer $caution
+     * @param int $caution
      *
      * @return contrat
      */
@@ -92,7 +99,7 @@ class contrat
     }
 
     /**
-     * Get caution
+     * Get caution.
      *
      * @return int
      */
@@ -102,7 +109,7 @@ class contrat
     }
 
     /**
-     * Set duree
+     * Set duree.
      *
      * @param \DateTime $duree
      *
@@ -116,12 +123,60 @@ class contrat
     }
 
     /**
-     * Get duree
+     * Get duree.
      *
      * @return \DateTime
      */
     public function getDuree()
     {
         return $this->duree;
+    }
+
+    /**
+     * Set bien.
+     *
+     * @param \KEURGUI\immoBundle\Entity\Bien $bien
+     *
+     * @return contrat
+     */
+    public function setBien(\KEURGUI\immoBundle\Entity\Bien $bien = null)
+    {
+        $this->bien = $bien;
+
+        return $this;
+    }
+
+    /**
+     * Get bien.
+     *
+     * @return \KEURGUI\immoBundle\Entity\Bien
+     */
+    public function getBien()
+    {
+        return $this->bien;
+    }
+
+    /**
+     * Set client
+     *
+     * @param \KEURGUI\immoBundle\Entity\Bien $client
+     *
+     * @return contrat
+     */
+    public function setClient(\KEURGUI\immoBundle\Entity\Bien $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \KEURGUI\immoBundle\Entity\Bien
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }
