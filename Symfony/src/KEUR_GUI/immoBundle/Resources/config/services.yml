@@ -1,0 +1,4 @@
+services:
+#    keur.gu_iimmo.example:
+#        class: KEUR_GUI\immoBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

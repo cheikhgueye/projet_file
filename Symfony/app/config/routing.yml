@@ -1,0 +1,7 @@
+keur.gu_iimmo:
+    resource: "@KEUR_GUIimmoBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
