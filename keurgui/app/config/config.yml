@@ -9,6 +9,10 @@ parameters:
     locale: en
 
 framework:
+
+    serializer:
+        enabled: true    
+
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
@@ -67,3 +71,14 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+assetic:
+
+    debug:          '%kernel.debug%'
+
+    use_controller: '%kernel.debug%'
+
+fos_rest:
+    routing_loader:
+        include_format: false
+    view:
+        view_response_listener: true
